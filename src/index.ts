@@ -26,5 +26,5 @@ export function pgJsonCredentialsToUrl(
 
   return `postgres://${encodeURIComponent(username)}:${encodeURIComponent(
     password
-  )}@${host}:${port}/${dbname}`;
+  )}@${host}:${port}/${encodeURIComponent(dbname)}`;
 }

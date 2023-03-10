@@ -1,12 +1,14 @@
 {
   "name": "pg-json-credentials-to-url",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A utility for converting from raw JSON Postgres credentials to a Postgres connection URL.",
   "main": "./dist/index.js",
   "bin": "./dist/cli.js",
   "scripts": {
     "test": "npx jest",
-    "build": "npx tsc && chmod 755 ./dist/cli.js"
+    "build": "npx tsc && chmod 755 ./dist/cli.js",
+    "prepublishOnly": "npm run test && npm run build",
+    "publish": "npm publish"
   },
   "keywords": [
     "postgres",

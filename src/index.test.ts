@@ -13,6 +13,18 @@ describe("pgJsonCredentialsToUrl", () => {
     ).toEqual("postgres://username:password@host:5432/database");
   });
 
+  test("Should encode username, password, and database name", () => {
+    expect(
+      pgJsonCredentialsToUrl({
+        username: "user name",
+        password: "pass word",
+        host: "host",
+        port: "5432",
+        dbname: "data base",
+      })
+    ).toEqual("postgres://user%20name:pass%20word@host:5432/data%20base");
+  });
+
   test("Should successfully parse postgres credential JSON strings into URLs", () => {
     expect(
       pgJsonCredentialsToUrl(
