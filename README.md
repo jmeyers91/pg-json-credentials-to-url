@@ -9,12 +9,12 @@ The expected JSON format matches the format used in AWS RDS credential secrets.
 npm install pg-json-credentials-to-url
 ```
 
-## Examples
+## Usage
 
 You can use the package directly by importing it.
 
 ```ts
-import pgJsonCredentialsToUrl from "pg-json-credentials-to-url";
+import { pgJsonCredentialsToUrl } from "pg-json-credentials-to-url";
 
 const DATABASE_URL = pgJsonCredentialsToUrl(
   '{"username":"username","password":"password","host":"host","port":"5432","dbname":"database"}'
@@ -31,3 +31,11 @@ export DATABASE_URL="$(pg-json-credentials-to-url $DATABASE_CREDENTIALS)"
 
 npx prisma migrate deploy
 ```
+
+## API
+
+- `pgJsonCredentialsToUrl(credentials: string | object | undefined): string` - Takes your credentials as a JSON string or a pre-parsed object and returns a Postgres URL string. Throws if any errors are encountered parsing the database credentials.
+
+## CLI
+
+- `pg-json-credentials-to-url DATABASE_CREDENTIALS_JSON` - Takes a single required argument and outputs the URL to stdout.

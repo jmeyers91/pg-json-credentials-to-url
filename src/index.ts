@@ -1,3 +1,10 @@
+/**
+ * Takes Postgres connection options as a JSON string or object and returns a Postgres connection URL.
+ * Throws if any errors are encountered while parsing the credentials.
+ *
+ * @param json JSON string or object containing your Postgres credentials.
+ * @returns Postgres URL string
+ */
 export function pgJsonCredentialsToUrl(
   json: string | object | undefined
 ): string {
