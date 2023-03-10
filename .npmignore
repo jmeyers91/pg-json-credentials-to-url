@@ -1,0 +1,4 @@
+/node_modules
+/src
+/dist/*.test.*
+.DS_Store
